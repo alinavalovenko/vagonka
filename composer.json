@@ -1,0 +1,19 @@
+{
+  "name": "catenamedia/johnslots",
+  "authors": [
+    {
+      "name": "Catena Media"
+    }
+  ],
+  "require": {
+    "squizlabs/php_codesniffer": "3.5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "JohnSlots\\Components\\": "wp-content/themes/johnslots/inc/classes/",
+      "JohnSlots\\Admin\\": "wp-content/themes/johnslots/inc/admin/",
+      "JohnSlots\\Shortcodes\\": "wp-content/themes/johnslots/inc/shortcodes/",
+      "JohnSlots\\Widgets\\": "wp-content/themes/johnslots/inc/widgets/"
+    }
+  }
+}
