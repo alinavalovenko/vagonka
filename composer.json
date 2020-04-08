@@ -10,10 +10,10 @@
   },
   "autoload": {
     "psr-4": {
-      "JohnSlots\\Components\\": "wp-content/themes/johnslots/inc/classes/",
-      "JohnSlots\\Admin\\": "wp-content/themes/johnslots/inc/admin/",
-      "JohnSlots\\Shortcodes\\": "wp-content/themes/johnslots/inc/shortcodes/",
-      "JohnSlots\\Widgets\\": "wp-content/themes/johnslots/inc/widgets/"
+      "Components\\": "wp-content/themes/vagonka/inc/classes/",
+      "Admin\\": "wp-content/themes/vagonka/inc/admin/",
+      "Shortcodes\\": "wp-content/themes/vagonka/inc/shortcodes/",
+      "Widgets\\": "wp-content/themes/vagonka/inc/widgets/"
     }
   }
 }
