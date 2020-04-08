@@ -32,10 +32,33 @@ if (! class_exists('ThemeInit')) :
         public function jsEnqueueScripts()
         {
             wp_enqueue_style('style', THEME_DIR_URI . '/style.css');
-            wp_enqueue_style('main', THEME_DIR_URI . '/css/style.css');
-            wp_enqueue_script('scripts', THEME_DIR_URI . '/js/scripts.main.js', array(), JS_VERSION, true);
+            $this->enqueueSources('css');
             wp_deregister_script('jquery');
-            wp_enqueue_script('jquery', THEME_DIR_URI . '/js/jquery-3.4.1.min.js');
+            wp_enqueue_script('jquery', THEME_DIR_URI . '/js/jquery.js');
+            $this->enqueueSources('js');
+        }
+
+        private function enqueueSources($dir)
+        {
+            $file_list = array_filter(glob(THEME_DIR . "/$dir/*"));
+
+            foreach ($file_list as $item) {
+                $basename = basename($item);
+                if ('css' === $dir) :
+                    wp_enqueue_style(
+                        $basename,
+                        THEME_DIR_URI . "/$dir/$basename"
+                    );
+                else :
+                    wp_enqueue_script(
+                        '$basename',
+                        THEME_DIR_URI . "/$dir/$basename",
+                        array('jquery'),
+                        JS_VERSION,
+                        true
+                    );
+                endif;
+            }
         }
 
         /* Register custom sidebar areas to be used in the template*/
