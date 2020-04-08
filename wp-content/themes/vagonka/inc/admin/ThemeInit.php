@@ -13,7 +13,7 @@ if (! class_exists('ThemeInit')) :
         public function __construct()
         {
             add_action('after_setup_theme', array($this, 'themeSetup'));
-            add_action('wp_enqueue_scripts', array($this, 'jsEnqueueScripts'));
+            add_action('wp_enqueue_scripts', array($this, 'EnqueueScripts'));
             add_action('widgets_init', array($this, 'registerSidebarAreas'));
         }
 
@@ -29,7 +29,7 @@ if (! class_exists('ThemeInit')) :
         }
 
         /* Register styles and javascript */
-        public function jsEnqueueScripts()
+        public function EnqueueScripts()
         {
             wp_enqueue_style('style', THEME_DIR_URI . '/style.css');
             $this->enqueueSources('css');
